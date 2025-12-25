@@ -1,0 +1,416 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', 'Pretendard', sans-serif;
+    background:
+        radial-gradient(circle at top, #1e293b, #020617 60%);
+    color: white;
+    min-height: 100vh;
+}
+
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 48px;
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.top-bar h2 {
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.back-btn {
+    color: #93c5fd;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.back-btn:hover {
+    text-decoration: underline;
+}
+
+.game-detail {
+    max-width: 1000px;
+    margin: 60px auto;
+    padding: 40px;
+    text-align: center;
+    animation: fadeUp 0.8s ease;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.game-thumb {
+    width: 320px;
+    border-radius: 20px;
+    box-shadow:
+        0 20px 40px rgba(0,0,0,0.4),
+        inset 0 0 0 1px rgba(255,255,255,0.15);
+    margin-bottom: 25px;
+}
+
+.game-detail h3 {
+    font-size: 32px;
+    margin: 10px 0;
+}
+
+.game-desc {
+    opacity: 0.8;
+    line-height: 1.6;
+    margin-bottom: 40px;
+}
+
+.game-desc {
+    opacity: 0.85;
+    margin-bottom: 30px;
+}
+
+/* 버전 리스트 */
+.version-list {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+/* 공통 카드 */
+.version-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px 26px;
+    border-radius: 18px;
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(14px);
+    border: 1px solid rgba(255,255,255,0.12);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.version-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.35);
+}
+
+/* 텍스트 */
+.version-card strong {
+    font-size: 18px;
+}
+
+.version-card p {
+    margin: 6px 0 0;
+    font-size: 14px;
+    opacity: 0.75;
+}
+
+.download-btn {
+    padding: 12px 22px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #38bdf8, #0ea5e9);
+    color: black;
+    font-weight: 700;
+    text-decoration: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.download-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(56,189,248,0.4);
+}
+
+/* 최신 버전 버튼 강조 */
+.version-card.latest .download-btn {
+    background: linear-gradient(135deg, #22c55e, #16a34a);
+}
+
+.main-btn {
+    padding: 16px 36px;
+    border-radius: 18px;
+    font-size: 18px;
+    font-weight: 700;
+    background: linear-gradient(135deg, #22c55e, #16a34a);
+    box-shadow: 0 15px 30px rgba(34,197,94,0.35);
+    transition: transform 0.25s ease;
+}
+
+.main-btn:hover {
+    transform: translateY(-4px);
+}
+
+/* =========================
+   모바일 런처 UI
+========================= */
+@media (max-width: 768px) {
+
+    body {
+        padding-bottom: 80px;
+    }
+
+    /* 기존 PC UI 숨김 */
+    .top-bar,
+    .game-detail {
+        display: none;
+    }
+
+    .mobile-launcher {
+        padding: 24px;
+        text-align: center;
+        animation: fadeUp 0.6s ease;
+    }
+
+    .mobile-thumb {
+        width: 90%;
+        max-width: 320px;
+        border-radius: 22px;
+        box-shadow: 0 20px 40px rgba(0,0,0,0.45);
+        margin-bottom: 20px;
+    }
+
+    .mobile-title {
+        font-size: 28px;
+        margin: 10px 0;
+    }
+
+    .mobile-desc {
+        opacity: 0.75;
+        margin-bottom: 28px;
+    }
+
+    /* 최신 다운로드 버튼 */
+    .mobile-main-download {
+        display: block;
+        margin: 0 auto 35px;
+        padding: 18px;
+        border-radius: 20px;
+        font-size: 18px;
+        font-weight: 800;
+        text-decoration: none;
+        color: black;
+        background: linear-gradient(135deg, #22c55e, #16a34a);
+        box-shadow: 0 15px 30px rgba(34,197,94,0.45);
+        transition: transform 0.2s ease;
+    }
+
+    .mobile-main-download:active {
+        transform: scale(0.97);
+    }
+
+    /* 이전 버전 */
+    .mobile-sub-title {
+        text-align: left;
+        margin: 0 0 12px;
+        font-size: 18px;
+    }
+
+    .mobile-version-list {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .mobile-version-card {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 16px 18px;
+        border-radius: 16px;
+        text-decoration: none;
+        color: white;
+        background: rgba(255,255,255,0.08);
+        backdrop-filter: blur(12px);
+        border: 1px solid rgba(255,255,255,0.15);
+    }
+
+    .mobile-version-card strong {
+        font-size: 16px;
+    }
+
+    .mobile-version-card span {
+        display: block;
+        font-size: 13px;
+        opacity: 0.7;
+    }
+
+    /* 하단 고정 버튼 */
+    .mobile-bottom-btn {
+        position: fixed;
+        bottom: 15px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: calc(100% - 40px);
+        max-width: 420px;
+        text-align: center;
+        padding: 14px;
+        border-radius: 18px;
+        text-decoration: none;
+        font-weight: 700;
+        background: rgba(255,255,255,0.12);
+        color: white;
+        backdrop-filter: blur(14px);
+        border: 1px solid rgba(255,255,255,0.2);
+    }
+}
+
+/* =========================
+   홈 화면 런처 UI
+========================= */
+
+.home-launcher {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 24px;
+    animation: fadeUp 0.8s ease;
+}
+
+.home-thumb {
+    width: 85%;
+    max-width: 340px;
+    border-radius: 24px;
+    box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+    margin-bottom: 24px;
+}
+
+.home-title {
+    font-size: 34px;
+    margin: 10px 0;
+}
+
+.home-card {
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(14px);
+    border-radius: 18px;
+    padding: 18px 22px;
+    max-width: 420px;
+    margin-bottom: 30px;
+    border: 1px solid rgba(255,255,255,0.15);
+}
+
+.home-card p {
+    margin: 0;
+    opacity: 0.85;
+    line-height: 1.6;
+}
+
+/* 메인 버튼 */
+.home-main-btn {
+    width: 100%;
+    max-width: 420px;
+    padding: 18px;
+    border-radius: 22px;
+    font-size: 18px;
+    font-weight: 800;
+    text-decoration: none;
+    color: black;
+    background: linear-gradient(135deg, #38bdf8, #0ea5e9);
+    box-shadow: 0 18px 35px rgba(56,189,248,0.45);
+    transition: transform 0.2s ease;
+}
+
+.home-main-btn:active {
+    transform: scale(0.97);
+}
+
+/* =========================
+   패치 노트
+========================= */
+
+.patch-btn {
+    margin-top: 30px;
+    padding: 12px 20px;
+    border-radius: 14px;
+    border: none;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    color: white;
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(10px);
+}
+
+.patch-btn:hover {
+    background: rgba(255,255,255,0.25);
+}
+
+/* 모달 배경 */
+.patch-modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+/* 모달 내용 */
+.patch-content {
+    width: 90%;
+    max-width: 520px;
+    max-height: 80vh;
+    overflow-y: auto;
+    background: rgba(30,41,59,0.95);
+    backdrop-filter: blur(16px);
+    border-radius: 22px;
+    padding: 26px;
+    animation: fadeUp 0.4s ease;
+}
+
+.patch-content h2 {
+    margin-top: 0;
+    text-align: center;
+}
+
+/* 버전 블록 */
+.patch-version {
+    margin-top: 20px;
+    padding: 16px;
+    border-radius: 16px;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.12);
+}
+
+.patch-version.latest {
+    border: 1px solid #22c55e;
+    background: rgba(34,197,94,0.15);
+}
+
+.patch-version h3 {
+    margin: 0 0 10px;
+}
+
+.patch-version ul {
+    padding-left: 18px;
+    margin: 0;
+}
+
+.patch-version li {
+    margin-bottom: 6px;
+    opacity: 0.9;
+}
+
+/* 닫기 버튼 */
+.patch-close {
+    width: 100%;
+    margin-top: 25px;
+    padding: 14px;
+    border-radius: 16px;
+    border: none;
+    font-size: 16px;
+    font-weight: 800;
+    cursor: pointer;
+    background: linear-gradient(135deg, #ef4444, #dc2626);
+    color: white;
+}

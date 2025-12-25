@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>404</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="top-bar">
+    <h2>hoper404 game</h2>
+    <a href="index.html" class="back-btn">← HOME</a>
+</header>
+
+<div class="game-detail">
+
+    <img src="images/dw.png" class="game-thumb">
+
+    <h3>HOPER404</h3>
+    <p class="game-desc">
+        404 game.<br>
+        Please select a version.
+    </p>
+
+    <div class="version-list">
+        <div class="version-card">
+            <div style="text-align:left">
+                <strong >0.2v</strong>
+                <p>Coming soon ...</p>
+            </div>
+            <a download class="download-btn">
+                coming soon
+            </a>
+        </div>
+
+        <div class="version-card">
+            <div style="text-align:left">
+                <strong>0.1v</strong>
+                <p>This is an early beta version.</p>
+            </div>
+            <a href="games/hoper404-0.1v.zip" download class="download-btn">
+                download
+            </a>
+        </div>
+
+    </div>
+
+    <!-- 패치 노트 버튼 -->
+<button class="patch-btn" onclick="openPatch()">
+    📜 View Patch Notes
+</button>
+
+<!-- 패치 노트 모달 -->
+<div id="patchModal" class="patch-modal">
+    <div class="patch-content">
+
+        <h2>📜 Patch Notes</h2>
+
+        <div class="patch-version latest">
+            <h3>0.1v (Latest)</h3>
+            <ul>
+                <li>Added various features</li>
+                <li>Official Release of the Beta Version</li>
+                <li>Available for download</li>
+            </ul>
+        </div>
+
+        <div class="patch-version">
+            <h3>0.0v</h3>
+            <ul>
+                <li>Development stage</li>
+                <li>Download not available</li>
+            </ul>
+        </div>
+
+        <button class="patch-close" onclick="closePatch()">close</button>
+
+    </div>
+
+    <script>
+function openPatch() {
+    document.getElementById("patchModal").style.display = "flex";
+}
+
+function closePatch() {
+    document.getElementById("patchModal").style.display = "none";
+}
+</script>
+
+</div>
+
+</div>
+
+</body>
+</html>

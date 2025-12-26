@@ -2,7 +2,8 @@
   "name": "HOPER404",
   "short_name": "404adv",
   "description": "HOPER404",
-  "start_url": "./index.html",
+  "start_url": "/hoper404/index.html",
+  "scope": "/hoper404/",
   "display": "standalone",
   "background_color": "#020617",
   "theme_color": "#22c55e",
@@ -20,3 +21,4 @@
     }
   ]
 }
+

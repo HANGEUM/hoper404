@@ -45,6 +45,16 @@
             </a>
         </div>
 
+        <div class="version-card">
+            <div style="text-align:left">
+                <strong>0.0v</strong>
+                <p>This is an early beta version.</p>
+            </div>
+            <a onclick="alert('This version cannot be downloaded.')" class="x-download-btn">
+                Download not available
+            </a>
+        </div>
+
     </div>
 
 <button class="patch-btn" onclick="openPatch()">
@@ -57,7 +67,16 @@
         <h2>📜 Patch Notes</h2>
 
         <div class="patch-version latest">
-            <h3>0.1v (Latest)</h3>
+            <h3>0.2v (Latest)</h3>
+            <ul>
+                <li>Added various features</li>
+                <li>Official Release of the Beta Version</li>
+                <li>Available for download</li>
+            </ul>
+        </div>
+
+        <div class="patch-version">
+            <h3>0.1v</h3>
             <ul>
                 <li>Added various features</li>
                 <li>Official Release of the Beta Version</li>
@@ -69,7 +88,7 @@
             <h3>0.0v</h3>
             <ul>
                 <li>Development stage</li>
-                <li>Download not available</li>
+                <li style="color: rgb(255, 59, 59);">Download not available</li>
             </ul>
         </div>
 
@@ -78,6 +97,7 @@
     </div>
 
 <script>
+
 function openPatch() {
     document.getElementById("patchModal").style.display = "flex";
 }
@@ -85,12 +105,15 @@ function openPatch() {
 function closePatch() {
     document.getElementById("patchModal").style.display = "none";
 }
-</script>
 
-<script>
-if ("serviceWorker" in navigator) {
-  navigator.serviceWorker.register("/DownloadGame/service-worker.js");
+function openPopup() {
+    window.open(
+      'https://example.com',
+      'popupWindow',
+      'width=500,height=400'
+    );
 }
+
 </script>
 
 </div>
@@ -99,4 +122,3 @@ if ("serviceWorker" in navigator) {
 
 </body>
 </html>
-

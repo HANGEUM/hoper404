@@ -11,10 +11,13 @@
 
 <header class="top-bar">
     <h2>hoper404 game</h2>
+    <div class="settings-button" onclick="window.location.href='set.html'">⚙️</div>
     <a href="index.html" class="back-btn">← HOME</a>
 </header>
 
 <div class="game-detail">
+
+    <!-- onclick="alert('This version cannot be downloaded.')" -->
 
     <img src="images/dw.png" class="game-thumb">
 
@@ -24,50 +27,196 @@
         Please select a version.
     </p>
 
-    <div class="version-list">
-        <div class="version-card">
+
+    <button class="patch-btn" onclick="openPatch()">
+    📜 View Patch Notes
+    </button>
+
+    <br>
+    <br>
+
+    <div id="ver-tab" class="version-list">
+        <div class="version-card cm">
             <div style="text-align:left">
-                <strong >0.2v</strong>
-                <p>Coming soon ...</p>
+                <strong>v1.1</strong>
+                <p>coming soon.</p>
             </div>
-            <a download class="download-btn">
-                coming soon
+            <a download class="c-download-btn" onclick="openCM01()">
+                Download
             </a>
         </div>
 
         <div class="version-card">
             <div style="text-align:left">
-                <strong>0.1v</strong>
-                <p>This is an early beta version.</p>
+                <strong>v1</strong>
+                <p>amazing.</p>
             </div>
-            <a href="games/hoper404-0.1v.zip" download class="download-btn">
+            <a href="games/hoper404-v1.0.zip" download class="l-download-btn">
+                Download the latest version
+            </a>
+        </div>
+
+        <div class="version-card">
+            <div style="text-align:left">
+                <strong>v0.2.5 bata</strong>
+                <p>Coming soon version in beta.</p>
+            </div>
+            <a download class="download-btn" href="games/hoper404-v0.2.5-bata.zip">
+                Download
+            </a>
+        </div>
+
+        <div class="version-card">
+            <div style="text-align:left">
+                <strong>v0.2</strong>
+                <p>This version includes amazing featur͏es and you can't know.</p>
+            </div>
+            <a href="games/hoper404-v0.2.zip" download class="download-btn">
+                Download
+            </a>
+        </div>
+
+        <div class="version-card">
+            <div style="text-align:left">
+                <strong>v0.1.5.1</strong>
+                <p>Correcting errors in the 0.1.5 version.</p>
+            </div>
+            <a href="games/hoper404-0.1.5.1v.zip" download class="download-btn">
                 download
             </a>
         </div>
 
         <div class="version-card">
             <div style="text-align:left">
-                <strong>0.0v</strong>
-                <p>This is an early beta version.</p>
+                <strong>v0.1.5</strong>
+                <p>This version has new featur͏es.</p>
             </div>
-            <a onclick="alert('This version cannot be downloaded.')" class="x-download-btn">
-                Download not available
+            <a href="games/hoper404-0.1.5v.zip" download class="download-btn">
+                download
+            </a>
+        </div>
+
+        <div class="version-card x">
+            <div style="text-align:left">
+                <strong>v0.1.3</strong>
+                <p>Discontinued version.</p>
+            </div>
+            <a download class="x-download-btn" onclick="openPLds()">
+                download
+            </a>
+        </div>
+
+        <div class="version-card">
+            <div style="text-align:left">
+                <strong>v0.1</strong>
+                <p>This is an early bata version.</p>
+            </div>
+            <a href="games/hoper404-0.1v.zip" download class="download-btn">
+                download
+            </a>
+        </div>
+
+        <div class="version-card x">
+            <div style="text-align:left">
+                <strong>v0.0.5</strong>
+                <p>This is an early bata version.</p>
+            </div>
+            <a class="x-download-btn" onclick="openPLdwx()">
+                download
+            </a>
+        </div>
+
+        <div class="version-card x">
+            <div style="text-align:left">
+                <strong>v0.0</strong>
+                <p>This is an early bata version.</p>
+            </div>
+            <a class="x-download-btn" onclick="openPLdwx()">
+                download
             </a>
         </div>
 
     </div>
 
-<button class="patch-btn" onclick="openPatch()">
-    📜 View Patch Notes
-</button>
+    </div>
 
 <div id="patchModal" class="patch-modal">
     <div class="patch-content">
 
         <h2>📜 Patch Notes</h2>
 
+        <br>
+
+        Unreleased version
+
+        <div class="patch-version cm">
+            <h3>v1.1 <br> coming soon</h3>
+            <ul>
+                <li>amazing.</li>
+            </ul>
+        </div>
+
+        <br>
+        <br>
+        <br>
+
+        released version
+
         <div class="patch-version latest">
-            <h3>0.2v (Latest)</h3>
+            <h3>v1</h3>
+            <ul>
+                <li>amazing.</li>
+                <li>Available for download</li>
+            </ul>
+        </div>
+
+        <div class="patch-version">
+            <h3>v0.2.5</h3>
+            <ul>
+                <li>It is a beta version that tests the 0.2.5 version</li>
+                <li>A few features and bug fixes have been made for the 0.2.5 version</li>
+                <li>Beta version for testing purposes in 0.2.5</li>
+                <li>Available for download</li>
+            </ul>
+        </div>
+
+        <div class="patch-version">
+            <h3>v0.2</h3>
+            <ul>
+                <li>Added various features</li>
+                <li>is |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||</li>
+                <li>Official Release of the Beta Version</li>
+                <li>Available for download</li>
+            </ul>
+        </div>
+
+        <div class="patch-version">
+            <h3>v0.1.5.1</h3>
+            <ul>
+                <li>Correcting errors in the 0.1.5 version.</li>
+                <li>Available for download</li>
+            </ul>
+        </div>
+
+        <div class="patch-version">
+            <h3>v0.1.5</h3>
+            <ul>
+                <li>0.1 Update and Change Something</li>
+                <li>Improved and added features over version 0.1</li>
+                <li>Available for download</li>
+            </ul>
+        </div>
+
+        <div class="patch-version x">
+            <h3>v0.1.3</h3>
+            <ul>
+                <li>Discontinued version</li>
+                <li>Download not available</li>
+            </ul>
+        </div>
+
+        <div class="patch-version">
+            <h3>v0.1</h3>
             <ul>
                 <li>Added various features</li>
                 <li>Official Release of the Beta Version</li>
@@ -75,50 +224,119 @@
             </ul>
         </div>
 
-        <div class="patch-version">
-            <h3>0.1v</h3>
+        <div class="patch-version x">
+            <h3>v0.0.5</h3>
             <ul>
-                <li>Added various features</li>
-                <li>Official Release of the Beta Version</li>
-                <li>Available for download</li>
+                <li>Development Test Version</li>
+                <li>Download not available</li>
             </ul>
         </div>
 
-        <div class="patch-version">
-            <h3>0.0v</h3>
+        <div class="patch-version x">
+            <h3>v0.0</h3>
             <ul>
-                <li>Development stage</li>
-                <li style="color: rgb(255, 59, 59);">Download not available</li>
+                <li>Development Version</li>
+                <li>Download not available</li>
             </ul>
         </div>
 
         <button class="patch-close" onclick="closePatch()">close</button>
 
     </div>
+</div>
+
+<!--Error Modal-->
+
+<!--CM-->
+<div id="CM01" class="patch-modal">
+    <div class="patch-content">
+
+        <h2>ERROR!</h2>
+
+        <p>Error code : HP-CM01</p>
+        <br>
+        <p>아직 출시되지 않은 버전입니다.</p>
+        <p>It's a version that hasn't been released yet.</p>
+
+        <button class="patch-close" onclick="closeCM01()">close</button>
+
+    </div>
+</div>
+
+<div id="CM02" class="patch-modal">
+    <div class="patch-content">
+
+        <h2>ERROR!</h2>
+
+        <p>Error code : HP-CM02</p>
+        <br>
+        <p>아직 배포되지 않은 버전입니다.</p>
+        <p>This is a version that has not yet been deployed.</p>
+
+        <button class="patch-close" onclick="closeCM02()">close</button>
+
+    </div>
+</div>
+
+<!--PL-->
+<div id="PLx" class="patch-modal">
+    <div class="patch-content">
+
+        <h2>ERROR!</h2>
+
+        <p>Error code : HP-PLx</p>
+        <br>
+        <p>다운로드할 버전 또는 파일이 존재하지 않습니다.</p>
+        <p>No version or file exists to download.</p>
+
+        <button class="patch-close" onclick="closePLx()">close</button>
+
+    </div>
+</div>
+
+<div id="PLdwx" class="patch-modal">
+    <div class="patch-content">
+
+        <h2>ERROR!</h2>
+
+        <p>Error code : HP-PLdwx</p>
+        <br>
+        <p>다운로드할 수 없는 버전입니다.</p>
+        <p>This is a version that cannot be downloaded.</p>
+
+        <button class="patch-close" onclick="closePLdwx()">close</button>
+
+    </div>
+</div>
+
+<div id="PLds" class="patch-modal">
+    <div class="patch-content">
+
+        <h2>ERROR!</h2>
+
+        <p>Error code : HP-PLds</p>
+        <br>
+        <p>지원이 중단된 버전입니다.</p>
+        <p>This is a version that has been discontinued.</p>
+
+        <button class="patch-close" onclick="closePLds()">close</button>
+
+    </div>
+</div>
 
 <script>
+function downloadGame() {
+  if (AppSettings.get("confirmDownload")) {
+    if (!confirm("게임을 다운로드할까요?")) return;
+  }
 
-function openPatch() {
-    document.getElementById("patchModal").style.display = "flex";
+  location.href = "games/jump_v1.2.zip";
 }
-
-function closePatch() {
-    document.getElementById("patchModal").style.display = "none";
-}
-
-function openPopup() {
-    window.open(
-      'https://example.com',
-      'popupWindow',
-      'width=500,height=400'
-    );
-}
-
 </script>
 
-</div>
-
-</div>
+<script src="sc.js"></script>
+<script src="download.js"></script>
+<script src="app-settings.js"></script>
 
 </body>
 </html>

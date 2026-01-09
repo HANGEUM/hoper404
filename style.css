@@ -7,6 +7,11 @@ body {
     min-height: 100vh;
 }
 
+body.dark {
+  background: #020617;
+  color: #e5e7eb;
+}
+
 .top-bar {
     display: flex;
     justify-content: space-between;
@@ -26,6 +31,7 @@ body {
     color: #93c5fd;
     text-decoration: none;
     font-weight: 500;
+    width: 120px;
 }
 
 .back-btn:hover {
@@ -101,6 +107,37 @@ body {
     box-shadow: 0 12px 30px rgba(0,0,0,0.35);
 }
 
+/* 중단 버전 */
+.version-card.x {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px 26px;
+    border-radius: 18px;
+    background: rgba(255, 107, 107, 0.137);
+    backdrop-filter: blur(14px);
+    border: 1px solid rgba(126, 22, 22, 0.438);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.version-card.x:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.35);
+}
+
+/* coming soon 버전 */
+.version-card.cm {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px 26px;
+    border-radius: 18px;
+    background: rgba(245, 255, 107, 0.137);
+    backdrop-filter: blur(14px);
+    border: 1px solid rgba(124, 126, 22, 0.438);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
 /* 텍스트 */
 .version-card strong {
     font-size: 18px;
@@ -142,9 +179,52 @@ body {
     box-shadow: 0 8px 20px rgba(248, 88, 88, 0.4);
 }
 
+.c-download-btn {
+    padding: 12px 22px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #fffc57, #d6ec5a);
+    color: black;
+    font-weight: 700;
+    text-decoration: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.c-download-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(255, 243, 76, 0.4);
+}
+
 /* 최신 버전 버튼 강조 */
-.version-card.latest .download-btn {
+.version-card.latest {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px 26px;
+    border-radius: 18px;
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(14px);
+    border: 1px solid rgba(255,255,255,0.12);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.version-card.latesr:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.35);
+}
+
+.l-download-btn {
+    padding: 12px 22px;
+    border-radius: 12px;
     background: linear-gradient(135deg, #22c55e, #16a34a);
+    color: black;
+    font-weight: 700;
+    text-decoration: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.l-download-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(88, 248, 56, 0.4);
 }
 
 .main-btn {
@@ -338,6 +418,24 @@ body {
     transform: scale(0.97);
 }
 
+.home-set-btn {
+    width: 100%;
+    max-width: 420px;
+    padding: 18px;
+    border-radius: 22px;
+    font-size: 18px;
+    font-weight: 800;
+    text-decoration: none;
+    color: black;
+    background: linear-gradient(135deg, #38bdf8, #0ea5e9);
+    box-shadow: 0 18px 35px rgba(56,189,248,0.45);
+    transition: transform 0.2s ease;
+}
+
+.home-set-btn:active {
+    transform: scale(0.97);
+}
+
 /* =========================
    패치 노트
 ========================= */
@@ -402,6 +500,16 @@ body {
     background: rgba(34,197,94,0.15);
 }
 
+.patch-version.cm {
+    border: 1px solid #ffee04;
+    background: rgba(197, 194, 34, 0.15);
+}
+
+.patch-version.x {
+    border: 1px solid #ef4444;
+    background: rgba(239,68,68,0.15);
+}
+
 .patch-version h3 {
     margin: 0 0 10px;
 }
@@ -428,5 +536,494 @@ body {
     cursor: pointer;
     background: linear-gradient(135deg, #ef4444, #dc2626);
     color: white;
+}
+
+/* =========================
+   에러
+========================= */
+
+.error-btn {
+    margin-top: 30px;
+    padding: 12px 20px;
+    border-radius: 14px;
+    border: none;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    color: white;
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(10px);
+}
+
+.error-btn:hover {
+    background: rgba(255,255,255,0.25);
+}
+
+/* 모달 배경 */
+.error-modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+/* 모달 내용 */
+.error-content {
+    width: 90%;
+    max-width: 520px;
+    max-height: 80vh;
+    overflow-y: auto;
+    background: rgba(30,41,59,0.95);
+    backdrop-filter: blur(16px);
+    border-radius: 22px;
+    padding: 26px;
+    animation: fadeUp 0.4s ease;
+}
+
+.error-content h2 {
+    margin-top: 0;
+    text-align: center;
+}
+
+/* 닫기 버튼 */
+.error-close {
+    width: 100%;
+    margin-top: 25px;
+    padding: 14px;
+    border-radius: 16px;
+    border: none;
+    font-size: 16px;
+    font-weight: 800;
+    cursor: pointer;
+    background: linear-gradient(135deg, #ef4444, #dc2626);
+    color: white;
+}
+
+
+.settings-button {
+    position: absolute;
+    top: 33px;
+    right: 30px;
+    padding: 13px 13px;
+    background: rgba(255,255,255,0.2);
+    border: 1px solid rgba(255,255,255,0.3);
+    border-radius: 70px;
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    backdrop-filter: blur(4px);
+    transition: background 0.2s ease;
+}
+
+.settings-button:hover {
+    background: rgba(255,255,255,0.3);
+}
+
+
+
+
+
+.app {
+  font-family: sans-serif;
+  background: linear-gradient(135deg, #1e293b, #020617);
+  color: #ffffff;
+}
+
+.app.dark {
+  background: linear-gradient(135deg, #020617, #020617);
+  color: #e5e7eb;
+}
+
+
+
+.back-btn {
+  margin-right: 12px;
+  font-size: 20px;
+  background: none;
+  border: none;
+  color: white;
+}
+
+.settings {
+  padding: 16px;
+}
+
+.setting-item {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  background: rgb(47, 48, 61);
+  border-radius: 16px;
+  margin-bottom: 14px;
+  overflow: hidden;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.377);
+}
+
+.setting-item:hover {
+    cursor: pointer;
+    transform: translateY(-5px);
+    transition: transform 0.2s ease;
+}
+
+body.dark .setting-item {
+  background: rgba(36, 58, 92, 0.377);
+}
+
+/* 메인 설정 영역 */
+.setting-main {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 16px;
+}
+
+.setting-title {
+  font-size: 20px;
+  font-weight: 500;
+  font-style: bold;
+}
+
+.setting-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.setting-icon {
+  font-size: 20px;
+  width: 28px;
+  text-align: center;
+}
+
+.setting-action {
+    font-size: 15px;
+}
+
+.detail-header h2 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.detail-header span:first-child {
+  font-size: 22px;
+}
+
+/*detail*/
+
+.detail-body {
+  padding: 20px;
+}
+
+.detail-toggle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255,255,255,.9);
+  padding: 16px;
+  border-radius: 16px;
+  margin-bottom: 14px;
+}
+
+body.dark .detail-toggle {
+  background: rgba(30,41,59,.9);
+}
+
+.detail-desc {
+  font-size: 14px;
+  color: #64748b;
+}
+
+
+/* 즐겨찾기 전용 영역 */
+.setting-action {
+  display: flex;
+  align-items: center;
+  padding: 0 14px;
+  background: rgba(0,0,0,.03);
+}
+
+body.dark .setting-action {
+  background: rgba(255,255,255,.05);
+}
+
+/* 즐겨찾기 버튼 */
+.fav-btn {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: #facc15;
+}
+
+.fav-btn:hover {
+  transform: scale(1.15);
+}
+
+/* 스위치 */
+.switch {
+  position: relative;
+  width: 50px;
+  height: 26px;
+}
+
+.switch input {
+  display: none;
+}
+
+.slider {
+  position: absolute;
+  background: #cbd5f5;
+  border-radius: 26px;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.slider::before {
+  content: "";
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  left: 2px;
+  top: 2px;
+  background: white;
+  border-radius: 50%;
+  transition: .3s;
+}
+
+input:checked + .slider {
+  background: #22c55e;
+}
+
+input:checked + .slider::before {
+  transform: translateX(24px);
+}
+
+.danger {
+  width: 100%;
+  padding: 12px;
+  background: #ef4444;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+}
+
+.glass-button {
+        padding: 15px 20px;
+        font-size: 18px;
+        color: white;
+        background: rgba(255, 255, 255, 0.15); 
+        border: 1px solid rgba(255, 255, 255, 0.4); 
+        border-radius: 12px;
+        backdrop-filter: blur(10px); 
+        -webkit-backdrop-filter: blur(10px); 
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); 
+        cursor: pointer;
+        transition: all 0.3s ease;
+        width: 98%;
+    }
+
+.glass-button:hover {
+    background: rgba(255, 255, 255, 0.25);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 40px rgba(0, 0, 0, 0.15);
+}
+
+.glass-button:active {
+    transform: translateY(0);
+    box-shadow: 0 3px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* 하단 플로팅 탭 */
+.bottom-tabs {
+  position: fixed;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 12px;
+  padding: 10px 14px;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  z-index: 1000;
+}
+
+body.dark .bottom-tabs {
+  background: rgba(2, 6, 23, 0.85);
+}
+
+/* 버튼 */
+.bottom-tab {
+  background: none;
+  border: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 12px;
+  cursor: pointer;
+  opacity: 0.6;
+}
+
+.bottom-tab span {
+  font-size: 20px;
+}
+
+.bottom-tab.active {
+  opacity: 1;
+  color: #22c55e;
+}
+
+/* 탭 영역 여백 확보 */
+.settings {
+  padding-bottom: 120px;
+}
+
+.settings-content {
+  padding: 16px;
+  padding-bottom: 90px;
+}
+
+.tab-page {
+  display: none;
+  animation: fade .2s ease;
+}
+
+.tab-page.active {
+  display: block;
+}
+
+@keyframes fade {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* 하단 플로팅 탭 */
+.floating-tabs {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: blur(7px);
+  border-radius: 100px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.1),
+    inset 0 0 2px 1px rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+  /*--*/
+  position: fixed;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 12px;
+  padding: 12px 18px;
+  z-index: 100;
+}
+
+.floating-tabs button {
+  background: none;
+  border: none;
+  color: #94a3b8;
+  font-size: 20px;
+  padding: 8px 12px;
+  border-radius: 16px;
+}
+
+.floating-tabs button.active {
+    background: rgba(255, 255, 255, 0.25);
+    color: #22c55e;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.377);
+    transition: all 0.2s ease;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+.settings-search {
+  padding: 12px 16px;
+}
+
+.settings-search input {
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: 14px;
+  border: none;
+  background: #e5e7eb;
+  font-size: 15px;
+}
+
+body.dark .settings-search input {
+  background: #1e293b;
+  color: white;
+}
+
+.search-history {
+  background: rgba(255, 255, 255, 0.158);
+  border-radius: 14px;
+  margin-top: 8px;
+  box-shadow: 0 8px 24px rgba(0,0,0,.15);
+  overflow: hidden;
+}
+
+body.dark .search-history {
+  background: rgba(30, 41, 59, 0.95);
+}
+
+.search-history div {
+  padding: 10px 14px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.search-history div:hover {
+  background: rgba(0,0,0,.05);
+}
+
+body.dark .search-history div:hover {
+  background: rgba(255,255,255,.08);
+}
+
+.hidden {
+  display: none;
+}
+
+.history-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 8px;
+  padding: 0 6px;
+  font-size: 13px;
+  color: #64748b;
+}
+
+.history-header button {
+  background: none;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.history-header button:hover {
+  opacity: 0.7;
+}
+
+.setting-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 

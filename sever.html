@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Server Management Page</title>
+    <link rel="stylesheet" href="sever.css">
+</head>
+<body>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <h2>Admin</h2>
+        <nav>
+            <a href="#" class="tab-link active" data-tab="dashboard">Dashboard</a>
+            <a href="#" class="tab-link" data-tab="server">Server Status</a>
+            <a href="#" class="tab-link" data-tab="users">User Management</a>
+            <a href="#" class="tab-link" data-tab="settings">Settings</a>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <header class="glass-header">
+            <h1>Server Management Dashboard</h1>
+            <button class="logout-btn" onclick="window.location.href='index.html'">HOME</button>
+            <button class="logout-btn" onclick="window.location.href='index.html'">Logout</button>
+        </header>
+
+        <!-- Tab Contents -->
+        <section id="dashboard" class="tab-content active">
+            <div class="cards">
+                <div class="glass-card">
+                    <h3>CPU Usage</h3>
+                    <p>Current: Loading...</p>
+                </div>
+                <div class="glass-card">
+                    <h3>Memory Usage</h3>
+                    <p>Current: Loading...</p>
+                </div>
+                <div class="glass-card">
+                    <h3>Network Traffic</h3>
+                    <p>Current: Loading...</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="server" class="tab-content">
+            <div class="glass-card">
+                <h3>Server Status</h3>
+                <p>All servers are running normally.</p>
+            </div>
+        </section>
+
+        <section id="users" class="tab-content">
+            <div class="glass-card">
+                <h3>User Management</h3>
+                <p>Currently registered users: 0</p>
+            </div>
+        </section>
+
+        <section id="settings" class="tab-content">
+            <div class="glass-card">
+                <h3>Settings</h3>
+                <p>You can change the server environment settings here.</p>
+            </div>
+        </section>
+    </main>
+
+    <script src="sever.js"></script>
+</body>
+</html>

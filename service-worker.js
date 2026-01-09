@@ -1,21 +1,24 @@
-const BASE = "/hoper404/";
+const CACHE_NAME = "jump-adventure-v1";
 
-const FILES = [
-  BASE,
-  BASE + "index.html",
-  BASE + "download.html",
-  BASE + "style.css",
-  BASE + "manifest.json"
+const FILES_TO_CACHE = [
+  "./",
+  "./index.html",
+  "./download.html",
+  "./style.css",
+  "./manifest.json",
+  "./images/game.png"
 ];
 
-self.addEventListener("install", e => {
-  e.waitUntil(
-    caches.open("downloadgame-v1").then(c => c.addAll(FILES))
+self.addEventListener("install", event => {
+  event.waitUntil(
+    caches.open(CACHE_NAME).then(cache => cache.addAll(FILES_TO_CACHE))
   );
 });
 
-self.addEventListener("fetch", e => {
-  e.respondWith(
-    caches.match(e.request).then(r => r || fetch(e.request))
+self.addEventListener("fetch", event => {
+  event.respondWith(
+    caches.match(event.request).then(response => {
+      return response || fetch(event.request);
+    })
   );
 });

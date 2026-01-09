@@ -1,0 +1,176 @@
+<body class="app">
+
+<header class="top-bar">
+  <button class="back-btn" onclick="goHome()">←</button>
+  <h1>Settings</h1>
+  <link rel="stylesheet" href="style.css">
+</header>
+
+<main class="settings-content">
+
+<div class="settings-search">
+  <input
+    type="text"
+    id="settingSearch"
+    placeholder="setting search"
+    oninput="searchSettings(this.value)"
+    onfocus="showSearchHistory()"
+  >
+
+  <div class="history-header">
+    <span>Recent Search</span>
+    <button onclick="clearSearchHistory()">🗑</button>
+  </div>
+
+  <div id="searchHistory" class="search-history hidden"></div>
+</div>
+
+
+
+  <!-- 일반 -->
+  <section class="tab-page active" id="tab-general">
+    <h2>General</h2>
+
+    <div class="setting-item" data-keywords="dark mode" data-keywords="다크 모드">
+      <!-- main setting -->
+      <div class="setting-main"
+      onmousedown="startPress(event, this)"
+      onmouseup="endPress()"
+      ontouchstart="startPress(event, this)"
+      ontouchend="endPress()"
+      >
+
+    <div class="setting-left">
+      <span class="setting-icon" id="icon-darkMode">🖌️</span>
+      <span class="setting-title">Dark mode</span>
+      <span class="setting-action">Dark mode is applied.</span>
+    </div>
+
+    <label class="switch">
+      <input type="checkbox" id="darkMode">
+      <span class="slider"></span>
+    </label>
+    </div>
+
+       <!-- favorite button -->
+      <div class="setting-action">
+        <button
+          class="fav-btn"
+          onclick="event.stopPropagation(); toggleFavorite('darkMode')"
+        >
+          ☆
+        </button>
+
+      </div>
+    </div>
+
+    <div class="setting-item" data-keywords="auto update" data-keywords="자동 업데이트">
+      <!-- main setting -->
+      <div class="setting-main"
+      onmousedown="startPress(event, this)"
+      onmouseup="endPress()"
+      ontouchstart="startPress(event, this)"
+      ontouchend="endPress()"
+      >
+
+    <div class="setting-left">
+      <span class="setting-icon" id="icon-autoUpdate">🔄</span>
+      <span class="setting-title">Auto update</span>
+      <span class="setting-action">It automatically supports updates.</span>
+    </div>
+
+    <label class="switch">
+      <input type="checkbox" id="autoUpdate">
+      <span class="slider"></span>
+    </label>
+    </div>
+
+    <!-- favorite button -->
+    <div class="setting-action">
+      <button
+        class="fav-btn"
+        onclick="event.stopPropagation(); toggleFavorite('autoUpdate')"
+        aria-label="favorite"
+      >
+        ☆
+    </button>
+  </div>
+    </div>
+  </section>
+
+  <!-- 다운로드 -->
+  <section class="tab-page" id="tab-download">
+    <h2>Download</h2>
+
+    <div class="setting-item" data-keywords="confirm download" data-keywords="다운로드 확인">
+      <!-- main setting -->
+      <div class="setting-main"
+      onmousedown="startPress(event, this)"
+      onmouseup="endPress()"
+      ontouchstart="startPress(event, this)"
+      ontouchend="endPress()"
+      >
+
+    <div class="setting-left">
+      <span class="setting-icon" id="icon-confirmDownload">🔐</span>
+      <span class="setting-title">Confirm download</span>
+      <span class="setting-action">Check the download.</span>
+    </div>
+
+    <label class="switch">
+      <input type="checkbox" id="confirmDownload">
+      <span class="slider"></span>
+    </label>
+    </div>
+
+      <!-- favorite button -->
+    <div class="setting-action">
+      <button
+        class="fav-btn"
+        onclick="event.stopPropagation(); toggleFavorite('confirmDownload')"
+        aria-label="favorite"
+      >
+      ☆
+    </button>
+  </div>
+    </div>
+  </section>
+
+  <!-- 동기화 -->
+  <section class="tab-page" id="tab-sync">
+    <h2>Sync settings</h2>
+
+    <div class="glass-button" onclick="exportSettings()">Export settings</div>
+    <input type="file" id="importFile" hidden accept=".json">
+    <br>
+    <div class="glass-button" onclick="importSettings()">Import settings</div>
+  </section>
+
+  <!-- 정보 -->
+  <section class="tab-page" id="tab-info">
+    <h2>App info</h2>
+    <p>DownloadGame Launcher</p>
+    <p>Version 1.0.0</p>
+  </section>
+
+  <section class="tab-page" id="tab-favorite">
+    <h2>Favorite</h2>
+    <div id="favoriteList"></div>
+  </section>
+
+
+</main>
+
+<!-- 하단 플로팅 탭 -->
+<nav class="floating-tabs">
+  <button class="active" onclick="openTab('general', this)">⚙️</button>
+  <button onclick="openTab('download', this)">⬇️</button>
+  <button onclick="openTab('sync', this)">🔄</button>
+  <button onclick="openTab('info', this)">ℹ️</button>
+  <button onclick="openTab('favorite', this)">⭐</button>
+</nav>
+
+<script src="app-settings.js"></script>
+<script src="set.js"></script>
+<script src="settings-data.js"></script>
+</body>
